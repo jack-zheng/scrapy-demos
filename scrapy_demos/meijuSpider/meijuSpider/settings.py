@@ -1,4 +1,4 @@
-# Scrapy settings for kongfzSpider project
+# Scrapy settings for meijuSpider project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,15 +7,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'kongfzSpider'
+BOT_NAME = 'meijuSpider'
 
-SPIDER_MODULES = ['kongfzSpider.spiders']
-NEWSPIDER_MODULE = 'kongfzSpider.spiders'
+SPIDER_MODULES = ['meijuSpider.spiders']
+NEWSPIDER_MODULE = 'meijuSpider.spiders'
 
 LOG_LEVEL = "WARNING"
-
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'kongfzSpider (+http://www.yourdomain.com)'
+#USER_AGENT = 'meijuSpider (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -26,7 +25,7 @@ ROBOTSTXT_OBEY = True
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-# DOWNLOAD_DELAY = 3
+#DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -46,13 +45,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'kongfzSpider.middlewares.KongfzspiderSpiderMiddleware': 543,
+#    'meijuSpider.middlewares.MeijuspiderSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'kongfzSpider.middlewares.KongfzspiderDownloaderMiddleware': 543,
+#    'meijuSpider.middlewares.MeijuspiderDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -64,7 +63,7 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'kongfzSpider.pipelines.KongfzspiderPipeline': 300,
+#    'meijuSpider.pipelines.MeijuspiderPipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
