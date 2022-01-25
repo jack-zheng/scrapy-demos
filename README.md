@@ -2,6 +2,8 @@
 
 * [参考视屏](https://www.bilibili.com/video/BV1yf4y1B7S8)
 
+虽然最后几个分布式爬虫的内容没有完全掌握但是该有的 sense 都又了，要用到的时候在细查一下文档就行了。一些模拟登陆，授权什么的知识点，等真的要爬对应的信息的时候再查查
+
 ## 基础用法
 
 1. scrapy startproject tiobeSpider
@@ -47,6 +49,18 @@ scrapy 项目
 ## scrapy shell
 
 用法很简单，直接输入 `scrapy shell url_addr` 就可以动态 debug 某一个页面了，很赞
+
+> 添加 headers
+```python
+scrapy shell
+from scrapy import Request
+
+req = Request('https://pjapi.jd.com/book/sort?source=bookSort', headers={"referer":"https://book.jd.com/", "authority":"pjapi.jd.com"})
+fetch(req)
+
+# 执行完之后就可以直接从 shell 中拿 response 等信息了
+response.text
+```
 
 ## Settings 使用
 
@@ -122,3 +136,28 @@ PS: 搜索的时候发现有现成的包提供模拟 agent 的，有机会可以
 2020-01-21，新版的 chrome 把 form 相关的数据放到了 Payload 这个 tab 下了，而且看了一下 github 的格式，和之前也不一样了，utf-8 没了，多了很多其他的比如 日期 之类的 field. 先用原先的 3 个看着比较重要的属性模拟一下登陆试试能不能成功先。
 
 github 访问有问题，实验不能进行，而且短时间内我竟然找不到其他类似登陆的网站。。。。弃了, 以后有机会在试试
+
+## scrapy_redis
+
+介绍了一个开源项目 scrapy_redis，一个使用 redis 的分布式爬虫项目，并稍微过了一下他的源码。特点：它是增量式的爬虫，之前爬过了他就不会再爬了
+
+先本地安装 redis 准备好实验环境
+
+1. 现在 scrapy_redis 项目，参照官方文档，运行 `python setup.py install`
+2. settings 中添加配置 `REDIS_URL = "redis://127.0.0.1:6379"`
+3. cd example-project + scrapy crawl dmoz
+4. 进入终端 `keys *` 查看新建的 DB
+
+## jd
+
+`https://book.jd.com/booksort` 这个地址现在是通过 API call 的方式获取内容了，并不是页面直接显示了，相比之前要简单很多了, 不过需要在 header 中添加授权字段
+
+被 passport 的问题 block 了，多次请求后，jd 直接将 request 导向登陆界面了，我去。暂时没有什么兴趣继续解决了，redis 的练习打算找个其他的简单例子代替，重点是测试下加入配置之后查看是否能存入
+
+## dangdang
+
+# crontab
+
+一个定时启动爬虫的工具
+
+
