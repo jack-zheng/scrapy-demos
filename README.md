@@ -154,10 +154,20 @@ github 访问有问题，实验不能进行，而且短时间内我竟然找不�
 
 被 passport 的问题 block 了，多次请求后，jd 直接将 request 导向登陆界面了，我去。暂时没有什么兴趣继续解决了，redis 的练习打算找个其他的简单例子代替，重点是测试下加入配置之后查看是否能存入
 
+TBD...
+
 ## dangdang
 
-# crontab
+TBD...
+
+## crontab
 
 一个定时启动爬虫的工具
 
+## labulading
 
+抓取 https://labuladong.gitee.io/algo 内容，删除不必要的内容并做成电子书自用
+
+图片在对应 gitee 账号下的一个 project 中找到了，所有过程半自动化了，一些繁琐的步骤还是用手动创建的
+
+暂时弃坑 （；￣ェ￣）
